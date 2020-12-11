@@ -36,11 +36,13 @@ namespace SourceLiteralyCreator.Models
         [DisplayName("Издательство")]
         public string PublicationCompany { get; set; }
 
-        [DisplayName("Дата издания")]
+        [DisplayName("Год издания")]
         public DateTime PublicationDate { get; set; }
 
         [DisplayName("Количество страниц")]
         public int PageCount { get; set; }
+
+        public BookSource() => PublicationDate = new DateTime(2010, 1, 1);
 
         private string SingleAuthorBook()
         {

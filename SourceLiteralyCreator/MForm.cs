@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.Office.Utils;
+using DevExpress.XtraRichEdit.API.Native;
 using SourceLiteralyCreator.Const;
 using SourceLiteralyCreator.Models;
 
@@ -33,11 +35,13 @@ namespace SourceLiteralyCreator
             BindCollection.ListChanged += BindCollectionChanged;
             hideContainerRight.MouseHover += HideContainerRightMouseHover;
 
-            //BindCollection.Add(new LitSourceObject { SourceObject = "Hello" });
-            //BindCollection.Add(new LitSourceObject { SourceObject = "This" });
-            //BindCollection.Add(new LitSourceObject { SourceObject = "Simple" });
-            //BindCollection.Add(new LitSourceObject { SourceObject = "Object" });
-            //BindCollection.Add(new LitSourceObject { SourceObject = "Collection" });
+#if DEBUG
+            BindCollection.Add(new LitSourceObject { SourceObject = "Hello" });
+            BindCollection.Add(new LitSourceObject { SourceObject = "This" });
+            BindCollection.Add(new LitSourceObject { SourceObject = "Simple" });
+            BindCollection.Add(new LitSourceObject { SourceObject = "Object" });
+            BindCollection.Add(new LitSourceObject { SourceObject = "Collection" });
+#endif
         }
         private void BindCollectionChanged(object sender, ListChangedEventArgs e)
         {
@@ -51,12 +55,12 @@ namespace SourceLiteralyCreator
         {
             SourcesList.ChangeSelect();
             ResumeLayout(true);
-            SetLabels();
+            SetBookLabels();
             ResumeLayout(false);
         }
 
-        #endregion
-        #region clicks
+#endregion
+#region clicks
 
         private void DeleteAllButtonClick(object sender, EventArgs e) => BindCollection.Clear();
 
@@ -79,8 +83,8 @@ namespace SourceLiteralyCreator
             }
         }
 
-        #endregion
-        #region list events
+#endregion
+#region list events
 
         private void SourcesListSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -92,45 +96,60 @@ namespace SourceLiteralyCreator
         private void SourcesListKeyPress(object sender, KeyPressEventArgs e)
             => SourcesList.ChangeSelect(e.KeyChar == (char)Keys.Escape ? ConstIntegers.NullIndex : GetListIndex);
 
-        #endregion
-        #region context menu
+#endregion
+#region context menu
 
         private void SelectAllContextButton_Click(object sender, EventArgs e) => SourcesList.SelectAll();
         private void ResetSelectingButtonClick(object sender, EventArgs e) => SourcesList.ChangeSelect();
         private void DeleteAllContextButton_Click(object sender, EventArgs e) => DeleteAllButton.PerformClick();
         private void DeleteSelectedContextButton_Click(object sender, EventArgs e) => DeleteSelectedButton.PerformClick();
 
-        #endregion
+#endregion
 
-        #region buffer dock
+#region buffer dock
 
         private void HideContainerRightMouseHover(object sender, EventArgs e)
         {
-            //var par = RichBuffer.Document.Paragraphs.FirstOrDefault();
-            //var parStyle = par.Style;
-            //parStyle.Alignment = DevExpress.XtraRichEdit.API.Native.ParagraphAlignment.Justify;
-            //parStyle.FirstLineIndent = 120;
-            //parStyle.LineSpacing = 1.5f;
-            //parStyle.Spacing = 15;
-            //RichBuffer.WordMLText = null;
+            RichBuffer.ResetText();
 
-            //RichBuffer.Document.AppendText("First paragraph\r\n");
-            //RichBuffer.Document.AppendText("Second paragraph\r\n");
-            //RichBuffer.Document.AppendText("Third paragraph\r\n");
+            DocumentRange range = RichBuffer.Document.Selection;
+            SubDocument doc = range.BeginUpdateDocument();
 
-            var parag = RichBuffer.Document.Paragraphs.FirstOrDefault();
-            parag.Alignment = DevExpress.XtraRichEdit.API.Native.ParagraphAlignment.Justify;
-            parag.FirstLineIndent = 120;
-            parag.LineSpacing = 1.5f;
+            ParagraphProperties pp = doc.BeginUpdateParagraphs(range);
+
+            pp.Style.FontName = "Times New Roman";
+            pp.Style.FontSize = 14;
+            pp.Alignment = ParagraphAlignment.Justify;
+            pp.SpacingAfter = 0;
+            pp.SpacingBefore = 0;
+            pp.FirstLineIndentType = ParagraphFirstLineIndent.Indented;
+            pp.FirstLineIndent = 1.25f;
+            pp.LineSpacingType = ParagraphLineSpacing.Single;
+            pp.LineSpacingMultiplier = 1.5f;
+
+            TabInfoCollection tbiColl = pp.BeginUpdateTabs(true);
+            TabInfo tbi = new TabInfo
+            {
+                Alignment = TabAlignmentType.Left,
+                Position = Units.DocumentsToCentimetersF(236.0f)
+            };
+            tbiColl.Add(tbi);
+            pp.EndUpdateTabs(tbiColl);
+
+            foreach (LitSourceObject item in BindCollection)
+            {
+                doc.AppendText(item.SourceObject + Environment.NewLine);
+            }
+
+            doc.EndUpdateParagraphs(pp);
+            range.EndUpdateDocument(doc);
 
         }
-
-        #endregion
-        #region add book
-        private void SetLabels()
+        private void SetBookLabels()
         {
             DisplayNameHelper helper = new DisplayNameHelper();
             BookSource simpleBookSource = new BookSource();
+            EthernetSource simpleEthernetSourcec = new EthernetSource();
 
             labelControl1.Text = helper.GetDisplayName(typeof(BookSource), nameof(simpleBookSource.FirstAuthor));
             labelControl2.Text = helper.GetDisplayName(typeof(BookSource), nameof(simpleBookSource.SecondAuthor));
@@ -143,7 +162,15 @@ namespace SourceLiteralyCreator
             labelControl9.Text = helper.GetDisplayName(typeof(BookSource), nameof(simpleBookSource.PublicationCompany));
             labelControl10.Text = helper.GetDisplayName(typeof(BookSource), nameof(simpleBookSource.PublicationDate));
             labelControl11.Text = helper.GetDisplayName(typeof(BookSource), nameof(simpleBookSource.PageCount));
+
+            labelControl12.Text = helper.GetDisplayName(typeof(EthernetSource), nameof(simpleEthernetSourcec.SourceName));
+            labelControl13.Text = helper.GetDisplayName(typeof(EthernetSource), nameof(simpleEthernetSourcec.SourceURL));
+            labelControl14.Text = helper.GetDisplayName(typeof(EthernetSource), nameof(simpleEthernetSourcec.VisitDate));
         }
+
+#endregion
+#region add book
+
         private BookSource MapBookFromUI()
         {
             BookSource simpleBookSource = new BookSource();
@@ -157,7 +184,7 @@ namespace SourceLiteralyCreator
             simpleBookSource.PublicationPlace = textEdit8.Text;
             simpleBookSource.PublicationCompany = textEdit9.Text;
             simpleBookSource.PublicationDate = dateEdit1.DateTime;
-            simpleBookSource.PageCount = Convert.ToInt32(textEdit10.Text);
+            simpleBookSource.PageCount = textEdit10.Text.IsNOE() ? 0 : Convert.ToInt32(textEdit10.Text);
             return simpleBookSource;
         }
         private void MapBookToUI(BookSource simpleBookSource)
@@ -181,7 +208,36 @@ namespace SourceLiteralyCreator
             {
                 MapBookToUI(new BookSource());
             }
+            createBookPanel.HideSliding();
         }
-        #endregion
+
+#endregion
+#region add ethernet
+
+        private EthernetSource MapEthernetSourceFromUI()
+        {
+            EthernetSource simpleEthernetSource = new EthernetSource();
+            simpleEthernetSource.SourceName = textEdit11.Text;
+            simpleEthernetSource.SourceURL = textEdit12.Text;
+            simpleEthernetSource.VisitDate = dateEdit2.DateTime.Date;
+            return simpleEthernetSource;
+        }
+        private void MapEthernetSourceToUI(EthernetSource simpleEthernetSource)
+        {
+            textEdit11.Text = simpleEthernetSource.SourceName;
+            textEdit12.Text = simpleEthernetSource.SourceURL;
+            dateEdit2.DateTime = simpleEthernetSource.VisitDate;
+        }
+        private void AddEthernetSource_Click(object sender, EventArgs e)
+        {
+            BindCollection.Add(new LitSourceObject { SourceObject = MapEthernetSourceFromUI() });
+            if (IsClearNewEthernetSource.Checked)
+            {
+                MapEthernetSourceToUI(new EthernetSource());
+            }
+            createEthernetSourcePanel.HideSliding();
+        }
+
+#endregion
     }
 }

@@ -77,12 +77,22 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.createEthernetSourcePanel = new DevExpress.XtraBars.Docking.DockPanel();
+            this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tablePanel9 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
+            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.IsClearNewEthernetSource = new System.Windows.Forms.CheckBox();
+            this.AddEthernetSource = new DevExpress.XtraEditors.SimpleButton();
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.bufferDockPanel = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel8 = new DevExpress.Utils.Layout.TablePanel();
             this.RichBuffer = new DevExpress.XtraRichEdit.RichEditControl();
-            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             ((System.ComponentModel.ISupportInitialize)(this.SourcesList)).BeginInit();
             this.ListMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BindCollection)).BeginInit();
@@ -118,12 +128,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.createEthernetSourcePanel.SuspendLayout();
+            this.controlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel9)).BeginInit();
+            this.tablePanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
             this.hideContainerRight.SuspendLayout();
             this.bufferDockPanel.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel8)).BeginInit();
             this.tablePanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // SourcesList
@@ -133,6 +150,7 @@
             this.SourcesList.ContextMenuStrip = this.ListMenuStrip;
             this.SourcesList.DataSource = this.BindCollection;
             this.SourcesList.DisplayMember = "SourceObject";
+            this.SourcesList.HorizontalScrollbar = true;
             this.SourcesList.Location = new System.Drawing.Point(5, 73);
             this.SourcesList.Name = "SourcesList";
             this.SourcesList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -232,7 +250,7 @@
             this.CountLabel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.CountLabel.Location = new System.Drawing.Point(340, 36);
             this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(287, 31);
+            this.CountLabel.Size = new System.Drawing.Size(276, 31);
             this.CountLabel.TabIndex = 3;
             this.CountLabel.Text = "Количество элементов : 0";
             // 
@@ -276,10 +294,11 @@
             // 
             this.hideContainerBottom.BackColor = System.Drawing.SystemColors.Control;
             this.hideContainerBottom.Controls.Add(this.createBookPanel);
+            this.hideContainerBottom.Controls.Add(this.createEthernetSourcePanel);
             this.hideContainerBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.hideContainerBottom.Location = new System.Drawing.Point(0, 449);
             this.hideContainerBottom.Name = "hideContainerBottom";
-            this.hideContainerBottom.Size = new System.Drawing.Size(636, 28);
+            this.hideContainerBottom.Size = new System.Drawing.Size(617, 28);
             // 
             // createBookPanel
             // 
@@ -294,10 +313,10 @@
             this.createBookPanel.Options.FloatOnDblClick = false;
             this.createBookPanel.Options.ShowAutoHideButton = false;
             this.createBookPanel.Options.ShowCloseButton = false;
-            this.createBookPanel.OriginalSize = new System.Drawing.Size(200, 373);
+            this.createBookPanel.OriginalSize = new System.Drawing.Size(200, 372);
             this.createBookPanel.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.createBookPanel.SavedIndex = 0;
-            this.createBookPanel.Size = new System.Drawing.Size(636, 373);
+            this.createBookPanel.Size = new System.Drawing.Size(617, 372);
             this.createBookPanel.Text = "Добавить новую книгу в коллекцию";
             this.createBookPanel.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
@@ -306,7 +325,7 @@
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 27);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(630, 343);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(611, 342);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel1
@@ -348,7 +367,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(630, 343);
+            this.tablePanel1.Size = new System.Drawing.Size(611, 342);
             this.tablePanel1.TabIndex = 0;
             // 
             // tablePanel7
@@ -366,7 +385,7 @@
             this.tablePanel1.SetRow(this.tablePanel7, 7);
             this.tablePanel7.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel7.Size = new System.Drawing.Size(624, 26);
+            this.tablePanel7.Size = new System.Drawing.Size(605, 26);
             this.tablePanel7.TabIndex = 26;
             // 
             // labelControl9
@@ -388,7 +407,7 @@
             this.textEdit9.Location = new System.Drawing.Point(203, 3);
             this.textEdit9.Name = "textEdit9";
             this.tablePanel7.SetRow(this.textEdit9, 0);
-            this.textEdit9.Size = new System.Drawing.Size(418, 20);
+            this.textEdit9.Size = new System.Drawing.Size(399, 20);
             this.textEdit9.TabIndex = 18;
             // 
             // tablePanel6
@@ -406,7 +425,7 @@
             this.tablePanel1.SetRow(this.tablePanel6, 6);
             this.tablePanel6.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel6.Size = new System.Drawing.Size(624, 26);
+            this.tablePanel6.Size = new System.Drawing.Size(605, 26);
             this.tablePanel6.TabIndex = 25;
             // 
             // labelControl8
@@ -432,7 +451,7 @@
             "Москва",
             "Санкт-Петербург",
             "Ленинград"});
-            this.textEdit8.Size = new System.Drawing.Size(439, 20);
+            this.textEdit8.Size = new System.Drawing.Size(399, 20);
             this.textEdit8.TabIndex = 17;
             // 
             // tablePanel5
@@ -450,7 +469,7 @@
             this.tablePanel1.SetRow(this.tablePanel5, 5);
             this.tablePanel5.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel5.Size = new System.Drawing.Size(624, 26);
+            this.tablePanel5.Size = new System.Drawing.Size(605, 26);
             this.tablePanel5.TabIndex = 27;
             // 
             // labelControl7
@@ -473,7 +492,7 @@
             this.textEdit7.Location = new System.Drawing.Point(203, 3);
             this.textEdit7.Name = "textEdit7";
             this.tablePanel5.SetRow(this.textEdit7, 0);
-            this.textEdit7.Size = new System.Drawing.Size(418, 20);
+            this.textEdit7.Size = new System.Drawing.Size(399, 20);
             this.textEdit7.TabIndex = 16;
             // 
             // tablePanel4
@@ -491,7 +510,7 @@
             this.tablePanel1.SetRow(this.tablePanel4, 4);
             this.tablePanel4.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel4.Size = new System.Drawing.Size(624, 26);
+            this.tablePanel4.Size = new System.Drawing.Size(605, 26);
             this.tablePanel4.TabIndex = 26;
             // 
             // labelControl6
@@ -514,7 +533,7 @@
             this.textEdit6.Location = new System.Drawing.Point(203, 3);
             this.textEdit6.Name = "textEdit6";
             this.tablePanel4.SetRow(this.textEdit6, 0);
-            this.textEdit6.Size = new System.Drawing.Size(418, 20);
+            this.textEdit6.Size = new System.Drawing.Size(399, 20);
             this.textEdit6.TabIndex = 15;
             // 
             // tablePanel3
@@ -532,7 +551,7 @@
             this.tablePanel1.SetRow(this.tablePanel3, 3);
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(624, 42);
+            this.tablePanel3.Size = new System.Drawing.Size(605, 42);
             this.tablePanel3.TabIndex = 25;
             // 
             // labelControl5
@@ -555,7 +574,7 @@
             this.textEdit5.Location = new System.Drawing.Point(203, 11);
             this.textEdit5.Name = "textEdit5";
             this.tablePanel3.SetRow(this.textEdit5, 0);
-            this.textEdit5.Size = new System.Drawing.Size(418, 20);
+            this.textEdit5.Size = new System.Drawing.Size(399, 20);
             this.textEdit5.TabIndex = 14;
             // 
             // tablePanel2
@@ -573,7 +592,7 @@
             this.tablePanel1.SetRow(this.tablePanel2, 2);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(624, 26);
+            this.tablePanel2.Size = new System.Drawing.Size(605, 26);
             this.tablePanel2.TabIndex = 24;
             // 
             // textEdit4
@@ -583,7 +602,7 @@
             this.textEdit4.Location = new System.Drawing.Point(203, 3);
             this.textEdit4.Name = "textEdit4";
             this.tablePanel2.SetRow(this.textEdit4, 0);
-            this.textEdit4.Size = new System.Drawing.Size(418, 20);
+            this.textEdit4.Size = new System.Drawing.Size(399, 20);
             this.textEdit4.TabIndex = 13;
             // 
             // labelControl4
@@ -603,13 +622,13 @@
             // textEdit10
             // 
             this.tablePanel1.SetColumn(this.textEdit10, 3);
-            this.textEdit10.Location = new System.Drawing.Point(423, 286);
+            this.textEdit10.Location = new System.Drawing.Point(410, 286);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Properties.Mask.EditMask = "d";
             this.textEdit10.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit10.Properties.MaxLength = 4;
             this.tablePanel1.SetRow(this.textEdit10, 8);
-            this.textEdit10.Size = new System.Drawing.Size(204, 20);
+            this.textEdit10.Size = new System.Drawing.Size(198, 20);
             this.textEdit10.TabIndex = 23;
             // 
             // labelControl11
@@ -619,10 +638,10 @@
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.tablePanel1.SetColumn(this.labelControl11, 2);
             this.labelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl11.Location = new System.Drawing.Point(318, 275);
+            this.labelControl11.Location = new System.Drawing.Point(309, 275);
             this.labelControl11.Name = "labelControl11";
             this.tablePanel1.SetRow(this.labelControl11, 8);
-            this.labelControl11.Size = new System.Drawing.Size(99, 42);
+            this.labelControl11.Size = new System.Drawing.Size(96, 42);
             this.labelControl11.TabIndex = 22;
             this.labelControl11.Text = "labelControl11";
             // 
@@ -631,10 +650,10 @@
             this.IsClearNewBookSource.AutoSize = true;
             this.tablePanel1.SetColumn(this.IsClearNewBookSource, 3);
             this.IsClearNewBookSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IsClearNewBookSource.Location = new System.Drawing.Point(423, 323);
+            this.IsClearNewBookSource.Location = new System.Drawing.Point(410, 323);
             this.IsClearNewBookSource.Name = "IsClearNewBookSource";
             this.tablePanel1.SetRow(this.IsClearNewBookSource, 9);
-            this.IsClearNewBookSource.Size = new System.Drawing.Size(204, 17);
+            this.IsClearNewBookSource.Size = new System.Drawing.Size(198, 16);
             this.IsClearNewBookSource.TabIndex = 21;
             this.IsClearNewBookSource.Text = "Очищать поля после добавления";
             this.IsClearNewBookSource.UseVisualStyleBackColor = true;
@@ -647,7 +666,7 @@
             this.AddBookSource.Location = new System.Drawing.Point(3, 323);
             this.AddBookSource.Name = "AddBookSource";
             this.tablePanel1.SetRow(this.AddBookSource, 9);
-            this.AddBookSource.Size = new System.Drawing.Size(414, 17);
+            this.AddBookSource.Size = new System.Drawing.Size(402, 16);
             this.AddBookSource.TabIndex = 20;
             this.AddBookSource.Text = "Добавить книгу в коллекцию";
             this.AddBookSource.Click += new System.EventHandler(this.AddBookSource_Click);
@@ -656,7 +675,7 @@
             // 
             this.tablePanel1.SetColumn(this.dateEdit1, 1);
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(108, 286);
+            this.dateEdit1.Location = new System.Drawing.Point(105, 286);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -670,31 +689,32 @@
             this.dateEdit1.Properties.Mask.EditMask = "yyyy";
             this.dateEdit1.Properties.Mask.SaveLiteral = false;
             this.dateEdit1.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.dateEdit1.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dateEdit1.Properties.ShowToday = false;
             this.dateEdit1.Properties.TodayDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dateEdit1.Properties.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearView;
             this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.tablePanel1.SetRow(this.dateEdit1, 8);
-            this.dateEdit1.Size = new System.Drawing.Size(204, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(198, 20);
             this.dateEdit1.TabIndex = 19;
             // 
             // textEdit3
             // 
             this.tablePanel1.SetColumn(this.textEdit3, 1);
             this.tablePanel1.SetColumnSpan(this.textEdit3, 3);
-            this.textEdit3.Location = new System.Drawing.Point(108, 38);
+            this.textEdit3.Location = new System.Drawing.Point(105, 38);
             this.textEdit3.Name = "textEdit3";
             this.tablePanel1.SetRow(this.textEdit3, 1);
-            this.textEdit3.Size = new System.Drawing.Size(519, 20);
+            this.textEdit3.Size = new System.Drawing.Size(503, 20);
             this.textEdit3.TabIndex = 12;
             // 
             // textEdit2
             // 
             this.tablePanel1.SetColumn(this.textEdit2, 3);
-            this.textEdit2.Location = new System.Drawing.Point(423, 6);
+            this.textEdit2.Location = new System.Drawing.Point(410, 6);
             this.textEdit2.Name = "textEdit2";
             this.tablePanel1.SetRow(this.textEdit2, 0);
-            this.textEdit2.Size = new System.Drawing.Size(204, 20);
+            this.textEdit2.Size = new System.Drawing.Size(198, 20);
             this.textEdit2.TabIndex = 11;
             // 
             // labelControl10
@@ -707,7 +727,7 @@
             this.labelControl10.Location = new System.Drawing.Point(3, 275);
             this.labelControl10.Name = "labelControl10";
             this.tablePanel1.SetRow(this.labelControl10, 8);
-            this.labelControl10.Size = new System.Drawing.Size(99, 42);
+            this.labelControl10.Size = new System.Drawing.Size(96, 42);
             this.labelControl10.TabIndex = 10;
             this.labelControl10.Text = "labelControl10";
             // 
@@ -721,7 +741,7 @@
             this.labelControl3.Location = new System.Drawing.Point(3, 35);
             this.labelControl3.Name = "labelControl3";
             this.tablePanel1.SetRow(this.labelControl3, 1);
-            this.labelControl3.Size = new System.Drawing.Size(99, 26);
+            this.labelControl3.Size = new System.Drawing.Size(96, 26);
             this.labelControl3.TabIndex = 3;
             this.labelControl3.Text = "labelControl3";
             // 
@@ -732,20 +752,20 @@
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.tablePanel1.SetColumn(this.labelControl2, 2);
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl2.Location = new System.Drawing.Point(318, 3);
+            this.labelControl2.Location = new System.Drawing.Point(309, 3);
             this.labelControl2.Name = "labelControl2";
             this.tablePanel1.SetRow(this.labelControl2, 0);
-            this.labelControl2.Size = new System.Drawing.Size(99, 26);
+            this.labelControl2.Size = new System.Drawing.Size(96, 26);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "labelControl2";
             // 
             // textEdit1
             // 
             this.tablePanel1.SetColumn(this.textEdit1, 1);
-            this.textEdit1.Location = new System.Drawing.Point(108, 6);
+            this.textEdit1.Location = new System.Drawing.Point(105, 6);
             this.textEdit1.Name = "textEdit1";
             this.tablePanel1.SetRow(this.textEdit1, 0);
-            this.textEdit1.Size = new System.Drawing.Size(204, 20);
+            this.textEdit1.Size = new System.Drawing.Size(198, 20);
             this.textEdit1.TabIndex = 1;
             // 
             // labelControl1
@@ -758,24 +778,166 @@
             this.labelControl1.Location = new System.Drawing.Point(3, 3);
             this.labelControl1.Name = "labelControl1";
             this.tablePanel1.SetRow(this.labelControl1, 0);
-            this.labelControl1.Size = new System.Drawing.Size(99, 26);
+            this.labelControl1.Size = new System.Drawing.Size(96, 26);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "labelControl1";
+            // 
+            // createEthernetSourcePanel
+            // 
+            this.createEthernetSourcePanel.Controls.Add(this.controlContainer1);
+            this.createEthernetSourcePanel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.createEthernetSourcePanel.ID = new System.Guid("bebe978a-8265-47ff-8871-0a5adf41390f");
+            this.createEthernetSourcePanel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("createEthernetSourcePanel.ImageOptions.SvgImage")));
+            this.createEthernetSourcePanel.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.createEthernetSourcePanel.Location = new System.Drawing.Point(0, 0);
+            this.createEthernetSourcePanel.Name = "createEthernetSourcePanel";
+            this.createEthernetSourcePanel.Options.FloatOnDblClick = false;
+            this.createEthernetSourcePanel.Options.ShowAutoHideButton = false;
+            this.createEthernetSourcePanel.Options.ShowCloseButton = false;
+            this.createEthernetSourcePanel.Options.ShowMaximizeButton = false;
+            this.createEthernetSourcePanel.OriginalSize = new System.Drawing.Size(200, 372);
+            this.createEthernetSourcePanel.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.createEthernetSourcePanel.SavedIndex = 0;
+            this.createEthernetSourcePanel.Size = new System.Drawing.Size(617, 372);
+            this.createEthernetSourcePanel.Text = "Добавить новый электронный ресурс";
+            this.createEthernetSourcePanel.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            // 
+            // controlContainer1
+            // 
+            this.controlContainer1.Controls.Add(this.tablePanel9);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 27);
+            this.controlContainer1.Name = "controlContainer1";
+            this.controlContainer1.Size = new System.Drawing.Size(611, 342);
+            this.controlContainer1.TabIndex = 0;
+            // 
+            // tablePanel9
+            // 
+            this.tablePanel9.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 25F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            this.tablePanel9.Controls.Add(this.labelControl14);
+            this.tablePanel9.Controls.Add(this.labelControl13);
+            this.tablePanel9.Controls.Add(this.labelControl12);
+            this.tablePanel9.Controls.Add(this.dateEdit2);
+            this.tablePanel9.Controls.Add(this.textEdit12);
+            this.tablePanel9.Controls.Add(this.textEdit11);
+            this.tablePanel9.Controls.Add(this.IsClearNewEthernetSource);
+            this.tablePanel9.Controls.Add(this.AddEthernetSource);
+            this.tablePanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel9.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel9.Name = "tablePanel9";
+            this.tablePanel9.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel9.Size = new System.Drawing.Size(611, 342);
+            this.tablePanel9.TabIndex = 0;
+            // 
+            // labelControl14
+            // 
+            this.tablePanel9.SetColumn(this.labelControl14, 0);
+            this.labelControl14.Location = new System.Drawing.Point(3, 58);
+            this.labelControl14.Name = "labelControl14";
+            this.tablePanel9.SetRow(this.labelControl14, 2);
+            this.labelControl14.Size = new System.Drawing.Size(69, 13);
+            this.labelControl14.TabIndex = 29;
+            this.labelControl14.Text = "labelControl14";
+            // 
+            // labelControl13
+            // 
+            this.tablePanel9.SetColumn(this.labelControl13, 0);
+            this.labelControl13.Location = new System.Drawing.Point(3, 32);
+            this.labelControl13.Name = "labelControl13";
+            this.tablePanel9.SetRow(this.labelControl13, 1);
+            this.labelControl13.Size = new System.Drawing.Size(69, 13);
+            this.labelControl13.TabIndex = 28;
+            this.labelControl13.Text = "labelControl13";
+            // 
+            // labelControl12
+            // 
+            this.tablePanel9.SetColumn(this.labelControl12, 0);
+            this.labelControl12.Location = new System.Drawing.Point(3, 6);
+            this.labelControl12.Name = "labelControl12";
+            this.tablePanel9.SetRow(this.labelControl12, 0);
+            this.labelControl12.Size = new System.Drawing.Size(69, 13);
+            this.labelControl12.TabIndex = 27;
+            this.labelControl12.Text = "labelControl12";
+            // 
+            // dateEdit2
+            // 
+            this.tablePanel9.SetColumn(this.dateEdit2, 1);
+            this.dateEdit2.EditValue = null;
+            this.dateEdit2.Location = new System.Drawing.Point(194, 55);
+            this.dateEdit2.Name = "dateEdit2";
+            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.tablePanel9.SetRow(this.dateEdit2, 2);
+            this.dateEdit2.Size = new System.Drawing.Size(414, 20);
+            this.dateEdit2.TabIndex = 26;
+            // 
+            // textEdit12
+            // 
+            this.tablePanel9.SetColumn(this.textEdit12, 1);
+            this.textEdit12.Location = new System.Drawing.Point(194, 29);
+            this.textEdit12.Name = "textEdit12";
+            this.tablePanel9.SetRow(this.textEdit12, 1);
+            this.textEdit12.Size = new System.Drawing.Size(414, 20);
+            this.textEdit12.TabIndex = 25;
+            // 
+            // textEdit11
+            // 
+            this.tablePanel9.SetColumn(this.textEdit11, 1);
+            this.textEdit11.Location = new System.Drawing.Point(194, 3);
+            this.textEdit11.Name = "textEdit11";
+            this.tablePanel9.SetRow(this.textEdit11, 0);
+            this.textEdit11.Size = new System.Drawing.Size(414, 20);
+            this.textEdit11.TabIndex = 24;
+            // 
+            // IsClearNewEthernetSource
+            // 
+            this.IsClearNewEthernetSource.AutoSize = true;
+            this.tablePanel9.SetColumn(this.IsClearNewEthernetSource, 1);
+            this.IsClearNewEthernetSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IsClearNewEthernetSource.Location = new System.Drawing.Point(194, 81);
+            this.IsClearNewEthernetSource.Name = "IsClearNewEthernetSource";
+            this.tablePanel9.SetRow(this.IsClearNewEthernetSource, 3);
+            this.IsClearNewEthernetSource.Size = new System.Drawing.Size(414, 20);
+            this.IsClearNewEthernetSource.TabIndex = 23;
+            this.IsClearNewEthernetSource.Text = "Очищать поля после добавления";
+            this.IsClearNewEthernetSource.UseVisualStyleBackColor = true;
+            // 
+            // AddEthernetSource
+            // 
+            this.tablePanel9.SetColumn(this.AddEthernetSource, 0);
+            this.AddEthernetSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddEthernetSource.Location = new System.Drawing.Point(3, 81);
+            this.AddEthernetSource.Name = "AddEthernetSource";
+            this.tablePanel9.SetRow(this.AddEthernetSource, 3);
+            this.AddEthernetSource.Size = new System.Drawing.Size(185, 20);
+            this.AddEthernetSource.TabIndex = 22;
+            this.AddEthernetSource.Text = "Добавить книгу в коллекцию";
+            this.AddEthernetSource.Click += new System.EventHandler(this.AddEthernetSource_Click);
             // 
             // hideContainerRight
             // 
             this.hideContainerRight.BackColor = System.Drawing.SystemColors.Control;
             this.hideContainerRight.Controls.Add(this.bufferDockPanel);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(636, 0);
+            this.hideContainerRight.Location = new System.Drawing.Point(617, 0);
             this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(21, 477);
+            this.hideContainerRight.Size = new System.Drawing.Size(40, 477);
             // 
             // bufferDockPanel
             // 
             this.bufferDockPanel.Controls.Add(this.dockPanel2_Container);
             this.bufferDockPanel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.bufferDockPanel.ID = new System.Guid("8b502892-3e73-4f39-b158-25433bcec660");
+            this.bufferDockPanel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bufferDockPanel.ImageOptions.SvgImage")));
             this.bufferDockPanel.Location = new System.Drawing.Point(0, 0);
             this.bufferDockPanel.Name = "bufferDockPanel";
             this.bufferDockPanel.Options.FloatOnDblClick = false;
@@ -838,14 +1000,6 @@
             this.RichBuffer.Unit = DevExpress.Office.DocumentUnit.Centimeter;
             this.RichBuffer.Views.PrintLayoutView.ZoomFactor = 0.55F;
             // 
-            // fluentDesignFormControl1
-            // 
-            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(657, 0);
-            this.fluentDesignFormControl1.TabIndex = 10;
-            this.fluentDesignFormControl1.TabStop = false;
-            // 
             // MForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -853,7 +1007,6 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.hideContainerBottom);
             this.Controls.Add(this.hideContainerRight);
-            this.Controls.Add(this.fluentDesignFormControl1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -898,12 +1051,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            this.createEthernetSourcePanel.ResumeLayout(false);
+            this.controlContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel9)).EndInit();
+            this.tablePanel9.ResumeLayout(false);
+            this.tablePanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
             this.hideContainerRight.ResumeLayout(false);
             this.bufferDockPanel.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel8)).EndInit();
             this.tablePanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -962,7 +1123,17 @@
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.Utils.Layout.TablePanel tablePanel8;
         private DevExpress.XtraRichEdit.RichEditControl RichBuffer;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
+        private DevExpress.XtraBars.Docking.ControlContainer controlContainer1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel9;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.TextEdit textEdit12;
+        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private System.Windows.Forms.CheckBox IsClearNewEthernetSource;
+        private DevExpress.XtraEditors.SimpleButton AddEthernetSource;
+        private DevExpress.XtraBars.Docking.DockPanel createEthernetSourcePanel;
     }
 }
 
